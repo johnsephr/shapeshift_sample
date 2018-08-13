@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './app.scss';
 
-import Button from '@material-ui/core/Button';
+import Layout from './Layout/Layout.js'
 
 class AppComponent extends React.Component {
 
@@ -14,13 +14,10 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className="app-component">
-        <Button variant="contained" color="primary">
-          Hello World
-        </Button>
+      <Layout />
       </div>
     );
   }
-
 }
 
 AppComponent.defaultProps = {};
