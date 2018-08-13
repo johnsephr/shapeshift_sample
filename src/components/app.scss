@@ -1,0 +1,15 @@
+@import '../scss/base';
+
+#app {
+    background-color: $background;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app-component {
+  min-height: 100vh;
+    button {
+        position: absolute !important;
+        @include centerer;
+    }
+
+}
