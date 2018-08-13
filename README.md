@@ -1,6 +1,6 @@
 # Front End Environment using React, Redux, Redux Sagas, and Sass
 
-A demo for The Night Sky.
+A demo for Shapeshift.
 
 ## Build and Run
 
