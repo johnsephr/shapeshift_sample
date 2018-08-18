@@ -4,7 +4,7 @@ import { call, put, takeEvery } from 'redux-saga/effects'
 
 // Hello Saga
 export function* helloSaga() {
-  console.log('Template Sagas are running!')
+  // console.log('Template Sagas are running!')
 }
 
 // single entry point to start all Sagas at once

@@ -12,41 +12,49 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import {
-  example
+  getBitcoinAddresses,
+  getBitcoinAddressesSuccess,
+  getBitcoinAddressesError
 } from '../actions/';
 import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   // constructor() {   super() }
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+  }
+  componentWillReceiveProps(nextProps) {
+    // console.log(nextProps);
   }
   render() {
-    const { actions, example } = this.props;
-    return <Main actions={actions} example={example} />;
+    const { actions, bitcoin } = this.props;
+    return <Main actions={actions} bitcoin={bitcoin} />;
   }
 }
 App.propTypes = {
   actions: PropTypes.shape({
-    login: PropTypes.func.isRequired,
-    logout: PropTypes.func.isRequired,
-    loginSuccess: PropTypes.func.isRequired,
-    loginError: PropTypes.func.isRequired
+    getBitcoinAddresses: PropTypes.func.isRequired,
+    getBitcoinAddressesSuccess: PropTypes.func.isRequired,
+    getBitcoinAddressesError: PropTypes.func.isRequired,
   }),
-  user: PropTypes.shape({}),
+  bitcoin: PropTypes.shape({}),
   example: PropTypes.shape({})
 };
 function mapStateToProps(state) {
   // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
   const props = {
-    user: state.user,
-    example: state.example
+    example: state.example,
+    bitcoin: state.bitcoin,
   };
   return props;
 }
 function mapDispatchToProps(dispatch) {
   /* Populated by react-webpack-redux:action */
   const actions = {
+    getBitcoinAddresses,
+    getBitcoinAddressesSuccess,
+    getBitcoinAddressesError
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   return actionMap;

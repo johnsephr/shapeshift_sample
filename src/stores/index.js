@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 // Saga Imports
 import createSagaMiddleware from 'redux-saga'
 import templateSagas from '../sagas/TemplateSagas'
+import bitcoinSagas from '../sagas/bitcoinSagas'
 
 import reducers from '../reducers'
 
@@ -15,6 +16,9 @@ function reduxStore(initialState) {
 
   // Start Up Template Sagas ( Template )
   sagaMiddleware.run(templateSagas)
+
+  // Start Up Bitcoin Sagas
+  sagaMiddleware.run(bitcoinSagas)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

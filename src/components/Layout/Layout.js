@@ -2,6 +2,7 @@ import React from 'react';
 import './layout.scss';
 
 import AddressList from '../AddressList/AddressList.js';
+import TransactionList from '../TransactionList/TransactionList.js';
 
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -10,6 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 class Layout extends React.Component {
 
   render() {
+    const {actions, bitcoinAddressData} = this.props;
     return (
       <div className="layout-component">
         <Grid container spacing={24}>
@@ -20,12 +22,12 @@ class Layout extends React.Component {
           </Grid>
           <Grid item xs={6}>
             <Card>
-              <CardContent>SHMalL SHeit</CardContent>
+              <TransactionList bitcoinAddressData={bitcoinAddressData}></TransactionList>
             </Card>
           </Grid>
 
           <Grid item xs={6}>
-            <AddressList></AddressList>
+            <AddressList actions={actions} getBitcoinAddresses={actions.getBitcoinAddresses} bitcoinAddressData={bitcoinAddressData}></AddressList>
           </Grid>
 
         </Grid>

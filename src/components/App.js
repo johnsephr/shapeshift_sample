@@ -12,9 +12,10 @@ class AppComponent extends React.Component {
   }
 
   render() {
+    const {actions, bitcoin} = this.props;
     return (
       <div className="app-component">
-      <Layout />
+        <Layout actions={actions} bitcoinAddressData={bitcoin.bitcoinAddressData}/>
       </div>
     );
   }
