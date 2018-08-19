@@ -15,7 +15,7 @@ class AppComponent extends React.Component {
     const {actions, bitcoin} = this.props;
     return (
       <div className="app-component">
-        <Layout actions={actions} bitcoinAddressData={bitcoin.bitcoinAddressData}/>
+        <Layout actions={actions} bitcoinAddressData={bitcoin.bitcoinAddressData} bitcoinStats={bitcoin.bitcoinStats} />
       </div>
     );
   }

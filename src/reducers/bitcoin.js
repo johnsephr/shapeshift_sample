@@ -6,10 +6,17 @@
 import {
   GET_BITCOIN_ADDRESSES,
   GET_BITCOIN_ADDRESSES_SUCCESS,
-  GET_BITCOIN_ADDRESSES_ERROR
+  GET_BITCOIN_ADDRESSES_ERROR,
+  GET_BITCOIN_STATS,
+  GET_BITCOIN_STATS_SUCCESS,
+  GET_BITCOIN_STATS_ERROR
 } from '../actions/const'
 
 const initialState = {
+  loadingBitcoinStats: false,
+  bitcoinStats: {
+    values: []
+  },
   bitcoinAddresses: [
     'mfpz95gjC8kTUmXZRQG4QnFFrBGxAYfVsU',
     'n35c8DcSQAwXTY9cDtzWmDbitPbHhbKsj2',
@@ -27,7 +34,7 @@ const initialState = {
     // 'mpHZhYUHT4fByDyGnRBrpVaMfDyrexF7aD',
     // 'n1FuDTNjgUt14zbL69TZSfQuqzHV9zSTVM'
   ],
-  bitcoinAddressData: [],
+  bitcoinAddressData: []
 };
 
 function reducer(state = initialState, action) {
@@ -56,24 +63,24 @@ function reducer(state = initialState, action) {
     //       return nextState
     //     }
 
-    //     /*----------------------------- Bitcoin Stats -----------------------------*/
-    //   case GET_BITCOIN_STATS:
-    //     {
-    //       nextState.loadingBitcoinStats = true;
-    //       return nextState
-    //     }
-    //   case GET_BITCOIN_STATS_SUCCESS:
-    //     {
-    //       nextState.loadingBitcoinStats = false;
-    //       nextState.bitcoinStats = action.payload;
-    //       return nextState
-    //     }
+    /*----------------------------- Bitcoin Stats -----------------------------*/
+    case GET_BITCOIN_STATS:
+      {
+        nextState.loadingBitcoinStats = true;
+        return nextState
+      }
+    case GET_BITCOIN_STATS_SUCCESS:
+      {
+        nextState.loadingBitcoinStats = false;
+        nextState.bitcoinStats = action.payload;
+        return nextState
+      }
 
-    //   case GET_BITCOIN_STATS_ERROR:
-    //     {
-    //       nextState.loadingBitcoinStats = false;
-    //       return nextState
-    //     }
+    case GET_BITCOIN_STATS_ERROR:
+      {
+        nextState.loadingBitcoinStats = false;
+        return nextState
+      }
 
 
     /*----------------------------- Bitcoin Addresses -----------------------------*/

@@ -6,6 +6,9 @@ Allows to import actions like so:
 import {action1, action2} from '../actions/'
 */
 /* Populated by react-webpack-redux:action */
+import getBitcoinStatsError from './getBitcoinStatsError.js';
+import getBitcoinStatsSuccess from './getBitcoinStatsSuccess.js';
+import getBitcoinStats from './getBitcoinStats.js';
 import example from '../actions/example.js';
 import getBitcoinAddresses from '../actions/getBitcoinAddresses';
 import getBitcoinAddressesSuccess from './getBitcoinAddressesSuccess.js';
@@ -14,6 +17,9 @@ const actions = {
   example,
   getBitcoinAddresses,
   getBitcoinAddressesSuccess,
-  getBitcoinAddressesError
+  getBitcoinAddressesError,
+  getBitcoinStats,
+  getBitcoinStatsSuccess,
+  getBitcoinStatsError
 };
 module.exports = actions;

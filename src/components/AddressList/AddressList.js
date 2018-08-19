@@ -15,7 +15,7 @@ class AddressList extends React.Component {
     this.getAddresses();
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
+    // console.log(nextProps)
   }
 
   getAddresses() {
