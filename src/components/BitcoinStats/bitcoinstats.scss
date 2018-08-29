@@ -1,3 +1,14 @@
 .bitcoinstats-component {
-  // border: 1px dashed #f00;
+  margin: auto;
+  h2,p {
+    text-align: center;
+    margin: auto;
+  }
+  p {
+    color: rgba(0, 0, 0, 0.54);
+    margin: 1rem 0;
+  }
+  .card-content {
+    // height: 200px;
+  }
 }

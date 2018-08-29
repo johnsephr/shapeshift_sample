@@ -57,11 +57,11 @@ function formatDate(date) {
   var monthIndex = date.getMonth();
   var year = date.getFullYear();
 
-  console.log('day', day, 'monthIndex', monthIndex, 'year', year);
+  // console.log('day', day, 'monthIndex', monthIndex, 'year', year);
   return day + ' ' + monthNames[monthIndex] + ' ' + year;
 }
 
-console.log('formatDate()', formatDate(new Date()));
+// console.log('formatDate()', formatDate(new Date()));
 
 
 // Get Bitcoin Stats Saga
@@ -70,11 +70,11 @@ export function* getBitcoinStats(action) {
   // Blockchain API
   axios.defaults.baseURL = 'https://api.blockchain.info';
   // Stats endpoint
-  let endpoint = `/charts/market-price?timespan=365days&format=json&lang=en&cors=true`;
+  let endpoint = `/stats`;
 
   // Pull bitcoin instance off the store
   const bitcoin = yield select(getBitcoin)
-  
+
   try {
     const resp = yield call(axios.get, endpoint)
 
@@ -95,8 +95,6 @@ export function* getBitcoinStats(action) {
       type: 'GET_BITCOIN_STATS_SUCCESS',
       payload: resp.data
     })
-    console.log('BITCH');
-
   } catch (err) {
     yield put({
       type: 'GET_BITCOIN_STATS_ERROR'

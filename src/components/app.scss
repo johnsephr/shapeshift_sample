@@ -1,15 +1,16 @@
 @import '../scss/base';
 
 #app {
-    background-color: $background;
+    // background-color: $background;
+    background-color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
 
 .app-component {
   min-height: 100vh;
-    button {
-        position: absolute !important;
-        @include centerer;
-    }
-
+  #banner {
+    height: 250px;
+    width: 100vw;
+    background-color: rgb(249, 220, 74);
+  }
 }

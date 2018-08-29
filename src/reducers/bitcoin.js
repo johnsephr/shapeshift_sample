@@ -9,7 +9,8 @@ import {
   GET_BITCOIN_ADDRESSES_ERROR,
   GET_BITCOIN_STATS,
   GET_BITCOIN_STATS_SUCCESS,
-  GET_BITCOIN_STATS_ERROR
+  GET_BITCOIN_STATS_ERROR,
+  ADD_BITCOIN_ADDRESS
 } from '../actions/const'
 
 const initialState = {
@@ -105,13 +106,13 @@ function reducer(state = initialState, action) {
         return nextState
       }
 
-    // case ADD_BITCOIN_ADDRESS:
-    // {
-    //   let newAddressList = state.bitcoinAddresses;
-    //   newAddressList.unshift(action.parameter);
-    //   nextState.bitcoinAddresses = newAddressList;
-    //   return nextState
-    // }
+    case ADD_BITCOIN_ADDRESS:
+    {
+      let newAddressList = state.bitcoinAddresses;
+      newAddressList.unshift(action.parameter);
+      nextState.bitcoinAddresses = newAddressList;
+      return nextState
+    }
 
     /*----------------------------- Default -----------------------------*/
     default:

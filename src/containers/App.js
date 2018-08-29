@@ -17,7 +17,8 @@ import {
   getBitcoinAddressesError,
   getBitcoinStats,
   getBitcoinStatsSuccess,
-  getBitcoinStatsError
+  getBitcoinStatsError,
+  addBitcoinAddress
 } from '../actions/';
 import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
@@ -42,6 +43,7 @@ App.propTypes = {
     getBitcoinStats: PropTypes.func.isRequired,
     getBitcoinStatsSuccess: PropTypes.func.isRequired,
     getBitcoinStatsError: PropTypes.func.isRequired,
+    addBitcoinAddress: PropTypes.func.isRequired,
   }),
   bitcoin: PropTypes.shape({}),
   example: PropTypes.shape({})
@@ -63,7 +65,8 @@ function mapDispatchToProps(dispatch) {
     getBitcoinAddressesError,
     getBitcoinStats,
     getBitcoinStatsSuccess,
-    getBitcoinStatsError
+    getBitcoinStatsError,
+    addBitcoinAddress
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   return actionMap;
